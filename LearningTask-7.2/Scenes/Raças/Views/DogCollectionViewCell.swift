@@ -7,15 +7,21 @@
 
 import UIKit
 
+protocol DogViewCellData {
+    var nome: String { get }
+    var imagem: String { get }
+}
+
 class DogCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var raça: Raça? {
+    var data: DogViewCellData? {
         didSet {
-            guard let raça = raça else { return }
-            dogImageView.image = UIImage(named: raça.nome)
-            nameLabel.text = raça.nome
+            guard let data = data else { return }
+            
+            dogImageView.image = .init(named: data.imagem)
+            nameLabel.text = data.nome
         }
     }
     

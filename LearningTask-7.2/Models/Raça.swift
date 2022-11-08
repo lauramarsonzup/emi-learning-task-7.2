@@ -9,4 +9,12 @@ import Foundation
 
 struct Raça {
     let nome: String
+    let imagem: String
+    
+    init(nome: String) {
+        self.nome = nome
+        self.imagem = nome
+    }
 }
+
+extension Raça: DogViewCellData {}

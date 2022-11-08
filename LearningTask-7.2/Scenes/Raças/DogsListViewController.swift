@@ -42,7 +42,7 @@ extension DogsListViewController {
             fatalError("Não foi possível carregar célula")
         }
         
-        cell.raça = dogs[indexPath.row]
+        cell.data = dogs[indexPath.row]
         
         return cell
     }
